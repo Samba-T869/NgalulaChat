@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+  body{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #3258fa;
+    min-height: 100vh; /*Ensure the body takes full viewport height*/
+    margin: 0;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*Center children horizontal*/
+    text-align: center; /*Center text elements*/
+  }
+  .container img{
+    animation: 
+      colorChange 3s infinite alternate,
+      pulse 4s infinite ease-in-out;
+    width: 25%;
+  }
+  h1{
+    font-size: 2.2rem;
+    margin-bottom: 14vh;
+  }
+  h1 span{
+    font-size: 4rem;
+    color: #ff7216;
+  }
+  a{
+    color: #ff7216;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-align: right;
+    left: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+  }
+  .motto{
+    height: 40px;
+    margin-top: 4vh;
+    box-shaow: 0 2px 12px #ff0000;
+  }
+  .motto h6{
+    color: #00ff00;
+    font-size: 1.2rem;
+    transition: 5s ease;
+  }
+  .motto h6:hover{
+    color: #f8ffff;
+    font-size: 2rem;
+  }
+    /* Animation for the background color */
+  @keyframes colorChange {
+    0% {
+      color: #FFFF00; /* Yellow */
+    }
+    50% {
+      color: #32CD32; /* Lime Green */
+    }
+    100% {
+      color: #00FF00; /* Green */
+    }
+  }
+  
+  /* Additional animation effects */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h1>Ngalula<span>Chat</span></h1>
+  <img src="{{url_for('static', filename='chat.svg')}}">
+  </div>
+  
+  <a href="{{url_for('login')}}">Welcome</a>
+  <div class="motto">
+    <h6>U'll never be Alone</h6>
+  </div>
+</body>
+</html>
